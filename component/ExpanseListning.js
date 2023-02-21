@@ -31,11 +31,11 @@ const ExpanceListening = ({
           expenseList?.map((exp) => (
             <tr
               data-ng-repeat="customer in people | filter: table"
-              key={exp._id}
+              key={exp?._id}
             >
-              <td> {exp.price}</td>
-              <td> {exp.title}</td>
-              <td>{moment(exp.date).format("dddd, DD/MM/YYYY")}</td>
+              <td> {exp?.price}</td>
+              <td> {exp?.title}</td>
+              <td>{moment(exp?.date).format("dddd, DD/MM/YYYY")}</td>
               <td>
                 {" "}
                 <div className="cursor-pointer">
@@ -57,7 +57,7 @@ const ExpanceListening = ({
                 <div className="cursor-pointer">
                   <button
                     className="btn btn-danger"
-                    onClick={() => deleteExpense(exp._id)}
+                    onClick={() => deleteExpense(exp?._id)}
                   >
                     Delete
                   </button>

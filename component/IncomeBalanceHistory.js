@@ -19,9 +19,9 @@ const IncomeHistory = () => {
       {incomeHistory && incomeHistory?.length ? (
         incomeHistory?.map((income) => (
           <>
-            <li key={income._id}>
-              Income :{income.income},{"  "}
-              {moment(income.date).format("dddd, DD/MM/YYYY")}
+            <li key={income?._id}>
+              Income :{income?.income},{"  "}
+              {moment(income?.date).format("dddd, DD/MM/YYYY")}
             </li>
           </>
         ))

@@ -7,7 +7,7 @@ const BalanceHistory = ({ totalExpense }) => {
         <div className="balance-container cursor-pointer">
           <h2>Your Balance</h2>
           <h2 id="balance" className="balance">
-            ${totalExpense.balance}
+            ${totalExpense?.balance}
           </h2>
         </div>
       </div>
@@ -15,13 +15,13 @@ const BalanceHistory = ({ totalExpense }) => {
         <div>
           <h4>Income</h4>
           <p id="money-plus" className="money plus">
-            +${totalExpense.income}
+            +${totalExpense?.income}
           </p>
         </div>
         <div className="cursor-pointer">
           <h4>Expenses</h4>
           <p id="money-minus" className="money minus">
-            -${totalExpense.total}
+            -${totalExpense?.total}
           </p>
         </div>
       </div>

@@ -10,8 +10,8 @@ const Modal = ({
 }) => {
   const updateExpenseHandler = async (id) => {
     let body = JSON.stringify({
-      price: updatedExpense.price,
-      title: updatedExpense.title,
+      price: updatedExpense?.price,
+      title: updatedExpense?.title,
     })
     const data = await fetchUpdate(id, body)
     if (data?.status === 1) {
@@ -54,7 +54,7 @@ const Modal = ({
               {" "}
               <input
                 name="price"
-                value={updatedExpense.price}
+                value={updatedExpense?.price}
                 onChange={(e) =>
                   setUpdatedExpense({
                     ...updatedExpense,
@@ -64,7 +64,7 @@ const Modal = ({
               />{" "}
               <input
                 name="title"
-                value={updatedExpense.title}
+                value={updatedExpense?.title}
                 onChange={(e) =>
                   setUpdatedExpense({
                     ...updatedExpense,
