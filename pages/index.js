@@ -1,10 +1,16 @@
-import { fetchTotalBalance } from "@/function/api"
+import { fetchExpense, fetchTotalBalance } from "@/function/api"
 import { useEffect, useState } from "react"
 import ExpenseList from "./expenseList"
-import { SERVER_URL } from "@/config"
 
-export default function Home({ expenseList }) {
-  const [expense, setExpenses] = useState(expenseList?.expenses)
+export default function Home() {
+  const [expense, setExpenses] = useState([])
+  const fetchExpensess = async () => {
+    const api = await fetchExpense()
+    setExpenses(api?.expenses)
+  }
+  useEffect(() => {
+    fetchExpensess()
+  }, [])
   const [totalExpense, setTotalExpense] = useState({
     balance: 0,
     total: 0,
@@ -33,14 +39,4 @@ export default function Home({ expenseList }) {
       />
     </>
   )
-}
-export async function getServerSideProps() {
-  const API_URL = SERVER_URL ?? "http://localhost:8080"
-  const api = await fetch(API_URL)
-  const resp = await api.json()
-  return {
-    props: {
-      expenseList: resp,
-    },
-  }
 }
