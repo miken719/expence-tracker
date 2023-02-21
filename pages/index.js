@@ -1,6 +1,6 @@
 import { fetchExpense, fetchTotalBalance } from "@/function/api"
 import { useEffect, useState } from "react"
-import ExpenseList from "./ExpenseList"
+import ExpenseList from "./expenseList"
 
 export default function Home({ expenseList }) {
   const [expense, setExpenses] = useState(expenseList?.expenses)
