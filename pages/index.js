@@ -1,4 +1,4 @@
-import { fetchExpense, fetchTotalBalance } from "@/function/api"
+import { fetchTotalBalance } from "@/function/api"
 import { useEffect, useState } from "react"
 import ExpenseList from "./expenseList"
 import { SERVER_URL } from "@/config"

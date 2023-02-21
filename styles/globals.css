@@ -242,19 +242,6 @@ th {
  * Update: 2015-06-05
  */
 /* CSS Reset */
-* {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  box-sizing: border-box;
-  outline: none;
-  font-weight: normal;
-}
-
-body {
-  background: #3498db;
-  font-family: "Segoe UI", "Microsoft YaHei";
-}
 
 a {
   color: #fff;
@@ -295,12 +282,6 @@ header a {
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
-}
-
-.container {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .tabs {
