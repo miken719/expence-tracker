@@ -1,5 +1,5 @@
-import { API_URL } from "@/config"
-console.log(API_URL)
+import { SERVER_URL } from "@/config"
+const API_URL = SERVER_URL ?? "http://localhost:8080"
 export const fetchExpense = async () => {
   const api = await fetch(API_URL)
 
