@@ -1,0 +1,498 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+:root {
+  --main-color: #13168d;
+  --secondary-color: #393a57;
+  --ternary-color: #486ba6;
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --background-color: #e5e6ed;
+  --background-secondary-color: #fff;
+  --border-color: #80717f;
+  --border-secondary-color: #bcc0cb;
+  --plus-color: #2ecc71;
+  --minus-color: #c0392b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+  font-family: "Noto Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header img {
+  width: 4.5rem;
+  opacity: 0.5;
+}
+
+.balance-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin: 30px auto;
+  width: 350px;
+}
+
+h1 {
+  font-size: 1.25rem;
+}
+
+h2 {
+  font-size: 1.17rem;
+}
+
+.balance {
+  letter-spacing: 1px;
+  margin: 0;
+  font-size: 2rem;
+}
+
+h3 {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
+}
+
+h2,
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.inc-exp-container {
+  background-color: var(--background-secondary-color);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid var(--border-secondary-color);
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: var(--plus-color);
+}
+
+.money.minus {
+  color: var(--minus-color);
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type="text"],
+input[type="number"] {
+  border: 1px solid var(--border-secondary-color);
+  border-radius: 5px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: var(--main-color);
+  box-shadow: var(--box-shadow);
+  color: var(--background-secondary-color);
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.list {
+  cursor: pointer;
+
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  width: 100%;
+  background-color: var(--background-secondary-color);
+  box-shadow: var(--box-shadow);
+  color: #157b3b;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.list li.plus {
+  border-left: 5px solid var(--plus-color);
+}
+
+.list li.minus {
+  border-left: 5px solid var(--minus-color);
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: var(--minus-color);
+  color: var(--background-secondary-color);
+  box-shadow: var(--box-shadow);
+  border: 0;
+  font-size: 22px;
+  line-height: 22px;
+  padding: 10px;
+  margin: 10px 0;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(100%, -73%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+
+.notification-container {
+  background-color: var(--minus-color);
+  color: var(--background-secondary-color);
+  border-radius: 5px 5px 0 0;
+  padding: 15px 20px;
+  position: fixed;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.notification-container.show {
+  opacity: 1;
+}
+
+.notification-container p {
+  margin: 0;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.header-center {
+  text-align: center;
+  text-decoration: overline;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+/*
+ * Title: Pure CSS3 Tabs
+ * Author: Clear
+ * Version: 1.0.1
+ * Create: 2015-05-31
+ * Update: 2015-06-05
+ */
+/* CSS Reset */
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  outline: none;
+  font-weight: normal;
+}
+
+body {
+  background: #3498db;
+  font-family: "Segoe UI", "Microsoft YaHei";
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  color: #fff;
+  text-align: center;
+  min-height: 140px;
+  margin-bottom: 60px;
+}
+
+header h1 {
+  margin-top: 100px;
+  font-size: 50px;
+  margin-bottom: 20px;
+  font-weight: 100;
+}
+
+header a {
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+.copyright {
+  font-size: 25px;
+  font-weight: 100;
+  color: #fff;
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* Tabs Start */
+
+.ease {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tabs {
+  background: #fff;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.tabs > input,
+.tabs > span {
+  width: 20%;
+  height: 60px;
+  line-height: 60px;
+  position: absolute;
+  top: 0;
+}
+
+.tabs > input {
+  cursor: pointer;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  position: absolute;
+  z-index: 99;
+}
+
+.tabs > span {
+  background: #f0f0f0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.tabs > span i,
+.tabs > span {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.tabs > input:hover + span {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tabs > input:checked + span {
+  background: #fff;
+}
+
+.tabs > input:checked + span,
+.tabs > input:hover + span {
+  color: #3498db;
+}
+
+#tab-1,
+#tab-1 + span {
+  left: 0;
+}
+
+#tab-2,
+#tab-2 + span {
+  left: 20%;
+}
+
+#tab-3,
+#tab-3 + span {
+  left: 40%;
+}
+
+#tab-4,
+#tab-4 + span {
+  left: 60%;
+}
+
+#tab-5,
+#tab-5 + span {
+  left: 80%;
+}
+
+.tab-content {
+  padding: 80px 20px 20px;
+  width: 100%;
+  min-height: 340px;
+}
+
+.tab-content section {
+  width: 100%;
+  display: none;
+}
+
+.tab-content section h1 {
+  margin-top: 15px;
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+}
+
+#tab-1:checked ~ .tab-content #tab-item-1 {
+  display: block;
+}
+
+#tab-2:checked ~ .tab-content #tab-item-2 {
+  display: block;
+}
+
+#tab-3:checked ~ .tab-content #tab-item-3 {
+  display: block;
+}
+
+#tab-4:checked ~ .tab-content #tab-item-4 {
+  display: block;
+}
+
+#tab-5:checked ~ .tab-content #tab-item-5 {
+  display: block;
+}
+
+/* effect-1 */
+
+.effect-1 > input:checked + span {
+  background: #fff;
+}
+
+/* effect-2 */
+
+.effect-2 span i {
+  padding-right: 15px;
+}
+
+@media (max-width: 600px) {
+  .effect-2 span span {
+    display: none;
+  }
+  .effect-2 span i {
+    padding: 0;
+  }
+}
+
+/* effect-3 */
+
+.effect-3 .line {
+  background: #3498db;
+  width: 20%;
+  height: 4px;
+  position: absolute;
+  top: 56px;
+}
+
+#tab-1:checked ~ .line {
+  left: 0;
+}
+
+#tab-2:checked ~ .line {
+  left: 20%;
+}
+
+#tab-3:checked ~ .line {
+  left: 40%;
+}
+
+#tab-4:checked ~ .line {
+  left: 60%;
+}
+
+#tab-5:checked ~ .line {
+  left: 80%;
+}
+
+/* effect-4 */
+
+.effect-4 span i {
+  font-size: 18px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.effect-4 span span {
+  position: relative;
+  top: 10px;
+}
+
+.effect-4 > input:checked + span i,
+.effect-4 > input:hover + span i {
+  top: 20%;
+  opacity: 1;
+}
+
+/* effect-5 */
+
+.effect-5 > input:checked + span i,
+.effect-5 > input:hover + span i {
+  font-size: 25px;
+}
