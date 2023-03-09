@@ -1,12 +1,14 @@
-import AddIncome from "@/component/Addincome"
-import BalanceHistory from "@/component/BalanceHistory"
-import ExpanseHistory from "@/component/ExpanceHistory"
-import AddTodo from "../addTodo"
+import AddIncome from "@/component/Addincome";
+import BalanceHistory from "@/component/BalanceHistory";
+import ExpanseHistory from "@/component/ExpanceHistory";
+import AddTodo from "../addTodo";
 const ExpenseList = ({
   expenseList,
   setExpenses,
   totalExpense,
   fetchTotalExpanceBalance,
+  sort,
+  setSort,
 }) => {
   return (
     <>
@@ -30,10 +32,12 @@ const ExpenseList = ({
             expenseList={expenseList}
             fetchTotalExpanceBalance={fetchTotalExpanceBalance}
             setExpenses={setExpenses}
+            setSort={setSort}
+            sort={sort}
           />
         </div>
       </div>
     </>
-  )
-}
-export default ExpenseList
+  );
+};
+export default ExpenseList;

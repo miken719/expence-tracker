@@ -1,12 +1,16 @@
-import { fetchFilter } from "@/function/api"
+import { fetchFilter } from "@/function/api";
 
-const FilterSearch = ({ setExpenses }) => {
+const FilterSearch = ({ setExpenses, sort, setSort }) => {
   const filterExpenses = async (searchText) => {
-    const resp = await fetchFilter(JSON.stringify({ search: searchText }))
-    setExpenses(resp?.expenses)
-  }
+    const resp = await fetchFilter(JSON.stringify({ search: searchText }));
+    setExpenses(resp?.expenses);
+  };
+
   return (
     <div className="row">
+      <button className="btn btn-primary" onClick={() => setSort(!sort)}>
+        {sort ? "Newest" : "Oldest"}
+      </button>
       <div className="col-md-2">Search:</div>
       <div className="col-md-10">
         <input
@@ -17,6 +21,6 @@ const FilterSearch = ({ setExpenses }) => {
         />
       </div>
     </div>
-  )
-}
-export default FilterSearch
+  );
+};
+export default FilterSearch;

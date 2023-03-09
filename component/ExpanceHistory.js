@@ -1,16 +1,21 @@
-import { useState } from "react"
-import ExpanceListening from "./ExpanseListning"
-import FilterSearch from "./FilterSearch"
-import IncomeHistory from "./IncomeBalanceHistory"
-import Modal from "./Modal"
+import { useState } from "react";
+import ExpanceListening from "./ExpanseListning";
+import FilterSearch from "./FilterSearch";
+import IncomeHistory from "./IncomeBalanceHistory";
+import Modal from "./Modal";
 
 const ExpanseHistory = ({
   setExpenses,
   fetchTotalExpanceBalance,
   expenseList,
+  sort,
+  setSort,
 }) => {
-  const [show, hide] = useState(false)
-  const [updatedExpense, setUpdatedExpense] = useState({ price: "", title: "" })
+  const [show, hide] = useState(false);
+  const [updatedExpense, setUpdatedExpense] = useState({
+    price: "",
+    title: "",
+  });
   return (
     <>
       <div>
@@ -19,7 +24,11 @@ const ExpanseHistory = ({
           data-ng-app="myApp"
           data-ng-controller="myCtrl"
         >
-          <FilterSearch setExpenses={setExpenses} />
+          <FilterSearch
+            setExpenses={setExpenses}
+            setSort={setSort}
+            sort={sort}
+          />
           <br />
           <div className="tabs effect-4">
             {/* tab-title */}
@@ -95,6 +104,6 @@ const ExpanseHistory = ({
         />
       )}
     </>
-  )
-}
-export default ExpanseHistory
+  );
+};
+export default ExpanseHistory;
